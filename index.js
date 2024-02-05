@@ -13,11 +13,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(
-  cors(
-    // origin: ["    origin: ["https://backend112.onrender.com"],"],
-    // methods: ["GET", "POST"],
-    // credentials: true,
-  )
+  cors({origin:"*"})
 );
 
     
@@ -30,9 +26,7 @@ app.use((req, res, next) => {
 app.use(cookieParser());
 ConnectDb();
 
-app.listen(4007, () => {
-  console.log("Server Is Running");
-});
+
 
 const verifyUser = (req, res, next) => {
   const token = req.cookie.token;
@@ -147,4 +141,7 @@ app.get("/", async (req, res) => {
     console.log(error);
     res.status(401).json({ message: "error in server side" });
   }
+});
+app.listen(4000, () => {
+  console.log("Server Is Running");
 });
