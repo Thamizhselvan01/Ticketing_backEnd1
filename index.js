@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["    origin: ["https://backend112.onrender.com"],"],
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -108,7 +108,7 @@ app.post("/forgot-password", (req, res) => {
       from: "tamil.kani56@gmail.com",
       to: "tamil.kani56@gmail.com",
       subject: "Reset your Password Link",
-      text: `http://localhost:5173/reset-password/${user._id}/${token}`,
+      text: `    origin: ["https://backend112.onrender.com"],/reset-password/${user._id}/${token}`,
     };
 
     mailTransporter.sendMail(details, (err) => {
