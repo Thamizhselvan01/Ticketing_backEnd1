@@ -13,11 +13,11 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(
-  cors({
-    origin: ["    origin: ["https://backend112.onrender.com"],"],
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
+  cors(
+    // origin: ["    origin: ["https://backend112.onrender.com"],"],
+    // methods: ["GET", "POST"],
+    // credentials: true,
+  )
 );
 
     
