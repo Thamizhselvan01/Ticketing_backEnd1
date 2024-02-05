@@ -12,17 +12,17 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors()
-);
+// app.use(
+//   cors()
+// );
 ConnectDb();
     
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Allow the listed HTTP methods
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'); // Allow the listed headers
-//   next();
-// });
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Allow the listed HTTP methods
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'); // Allow the listed headers
+  next();
+});
 app.use(cookieParser());
 
 
