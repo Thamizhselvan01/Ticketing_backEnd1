@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(
   cors()
 );
-
+ConnectDb();
     
 // app.use((req, res, next) => {
 //   res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
@@ -24,7 +24,7 @@ app.use(
 //   next();
 // });
 app.use(cookieParser());
-ConnectDb();
+
 
 
 
